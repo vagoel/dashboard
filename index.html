@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <script src="lib/js/jquery-1.11.2.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="lib/js/chart.js"></script>
+        <script src="js/dashboard.js"></script>
+    </head>
+    <body>
+    	
+
+        <!-- Dashboard Template -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">GSS Offerings Usage</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Help</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                                <input type="text" class="form-control" placeholder="Search...">
+                        </form>
+                    </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                    <div class="col-sm-3 col-md-2 sidebar">
+                        <ul class="nav nav-sidebar">
+                                <li class="active">
+                                	<a href="#">Overview 
+                                		<span class="sr-only">(current)</span>
+                                	</a>
+                                </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                        <h1 class="page-header">Dashboard</h1>
+                         <!-- Bar Chart -->
+                        <div id='bar-chart'>
+                            <canvas id="supportRequest" width="300" height="300"></canvas>
+                        </div>
+                        	<!-- pie chart -->
+                        <div id='pie-chart' class="row panel panel-default">
+                        	<div class="panel-content">
+                        		<section class="col-xs-5 text-center">
+								<h3>Product Goals</h3>
+                                <canvas id="productGoal" width="300" height="300"></canvas>
+								<span id="productSupportedLegend"></span>
+							</section>
+							<section class="col-xs-2 text-center">
+								<span><h1>VS</h1></span>
+							</section>
+							<section class="col-xs-5 text-center">
+                           		<h3>Products Supported</h3>
+                           		<canvas id="productSupported" width="300" height="300"></canvas>
+                                <span id="productSupportedLegend"></span>
+                           	</section>
+                        	</div>
+							
+                           	
+                        </div>
+                        
+                        <!-- Full Service Offering Table -->
+	                    <div class="panel panel-default" id='full-service-offering'>
+	                        <div class="panel-heading">
+	                            <h3 class="panel-title">FULL-SERVICE-OFFERINGS</h3>
+	                        </div>
+	                        <div class="panel-body">
+	                                <table class="table table-condensed table-responsive">
+	                                    <thead>
+	                                        <tr>
+	                                            <th></th>
+	                                            <th>Title</th>
+	                                            <th>Supported</th>
+	                                            <th>Target</th>
+	                                            <th>% of Target</th>
+	                                            <th>Hours Saved</th>
+	                                            <th>#Active</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>RFP</td>
+	                                            <td>11</td>
+	                                            <td>45</td>
+	                                            <td>24%</td>
+	                                            <td>0</td>
+	                                            <td>5</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo1">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Marketing POCs/SA</td>
+	                                            <td>7</td>
+	                                            <td>17</td>
+	                                            <td>42%</td>
+	                                            <td>69</td>
+	                                            <td>1</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo2">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>DPS POC</td>
+	                                            <td>0</td>
+	                                            <td>4</td>
+	                                            <td>0%</td>
+	                                            <td>0</td>
+	                                            <td>0</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo3">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo4" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Customer Journey</td>
+	                                            <td>0</td>
+	                                            <td>1</td>
+	                                            <td>0%</td>
+	                                            <td>0</td>
+	                                            <td>0</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo4">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo5" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Solution Visioning</td>
+	                                            <td>0</td>
+	                                            <td>17</td>
+	                                            <td>0%</td>
+	                                            <td>0</td>
+	                                            <td>0</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo5">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo6" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Formal Business Case</td>
+	                                            <td>0</td>
+	                                            <td>3</td>
+	                                            <td>0%</td>
+	                                            <td>0</td>
+	                                            <td>0</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo6">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo7" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Technical Solution Audit</td>
+	                                            <td>0</td>
+	                                            <td>14</td>
+	                                            <td>0%</td>
+	                                            <td>0</td>
+	                                            <td>0</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo7">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo8" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Custom Demo</td>
+	                                            <td>12</td>
+	                                            <td>28</td>
+	                                            <td>43%</td>
+	                                            <td>0</td>
+	                                            <td>1</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo8">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr class='info'>
+	                                            <th></th>
+	                                            <th>Total</th>
+	                                            <th>30</th>
+	                                            <th>129</th>
+	                                            <th>23%</th>
+	                                            <th>69</th>
+	                                            <th>7</th>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                        </div>
+	                    </div>
+
+                        <!-- Self Service Offering Table -->
+	                    <div class="panel panel-default" id='self-service-offering'>
+	                            <div class="panel-heading">
+	                                <h3 class="panel-title">SELF-SERVICE-OFFERINGS</h3>
+	                            </div>
+	                            <div class="panel-body">
+	                                <table class="table table-condensed table-responsive">
+	                                    <thead>
+	                                        <tr>
+	                                            <th></th>
+	                                            <th>Title</th>
+	                                            <th>Supported</th>
+	                                            <th>Target</th>
+	                                            <th>% of Target</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr data-toggle="collapse" data-target="#demo1-1" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>RFP</td>
+	                                            <td>5</td>
+	                                            <td>10</td>
+	                                            <td>51%</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo1-1">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo2-2" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Demo Hosting</td>
+	                                            <td>15</td>
+	                                            <td>22</td>
+	                                            <td>67%</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo2-2">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo3-3" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Value Brief/Indicators</td>
+	                                            <td>0</td>
+	                                            <td>35</td>
+	                                            <td>0%</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo3-3">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo4-4" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Light Business Case</td>
+	                                            <td>0</td>
+	                                            <td>25</td>
+	                                            <td>0%</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo4-4">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        <tr data-toggle="collapse" data-target="#demo5-5" class="accordion-toggle">
+	                                            <td>
+	                                                <button class="btn btn-default btn-xs">
+	                                                <span class="glyphicon glyphicon-eye-open"></span>
+	                                                </button>
+	                                            </td>
+	                                            <td>Value Scorecard</td>
+	                                            <td>0</td>
+	                                            <td>77</td>
+	                                            <td>0%</td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td colspan="12" class="hiddenRow">
+	                                                <div class="accordian-body collapse" id="demo5-5">
+	                                                    <ol>
+	                                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ea quam commodi nemo libero impedit sit recusandae saepe, nam ducimus cumque iure assumenda ratione amet, pariatur sint, repellendus unde non.</li>
+	                                                        <li>Laborum magnam ea, nobis aut harum amet, sint officia vitae nostrum mollitia quae! Cupiditate obcaecati accusamus nobis dicta? Incidunt rem dolorem magnam dicta voluptatibus modi, sint cupiditate corporis explicabo vel.</li>
+	                                                        <li>Repellendus id inventore veniam tenetur veritatis velit aliquid pariatur. Placeat, deleniti, est eligendi fugiat voluptatum dignissimos laborum obcaecati. Repellat et quod suscipit, quia itaque officiis assumenda porro accusantium aliquid obcaecati.</li>
+	                                                        <li>Odit ducimus est, odio ut, totam neque nostrum nisi dolorum ea, perferendis asperiores possimus officiis expedita eos ex dicta rem, at voluptates fugiat incidunt! Eligendi rem blanditiis officia sapiente aliquid.</li>
+	                                                        <li>Laboriosam enim quibusdam officiis saepe ipsa magnam debitis commodi, consequatur nostrum facere accusantium placeat, voluptatum eaque voluptate deleniti voluptates vitae obcaecati, minus. Harum animi vitae, similique reprehenderit ipsam autem. Cum.</li>
+	                                                        <li>Incidunt nostrum pariatur suscipit animi. Asperiores sint a natus, tempora soluta minima et veritatis libero consectetur non, quidem, beatae ipsa sapiente inventore suscipit amet. Nostrum corporis dolores impedit, et numquam!</li>
+	                                                        <li>Reprehenderit ullam, sit nisi omnis tempore dolorem harum placeat quaerat in, error. Repellendus quasi voluptas illum, nemo doloribus sint soluta quia ipsam fugiat quae magnam doloremque voluptatum, minima debitis pariatur?</li>
+	                                                        <li>Pariatur, fuga, eligendi, tenetur deserunt harum iure voluptatibus expedita autem aspernatur cumque tempora reiciendis aliquid quod perferendis amet cum. Neque voluptate, sed tempore totam voluptatem atque adipisci sit molestiae similique.</li>
+	                                                        <li>Fugit, temporibus natus quo? Voluptate eveniet ea dolor, natus officiis voluptatum adipisci mollitia! Ad quidem animi explicabo dicta velit illum quisquam hic dolores. Quae eos totam quidem omnis similique sint.</li>
+	                                                        <li>Blanditiis dolores possimus voluptas aliquam maiores vel qui, nihil fuga laboriosam repellendus quia ipsam quasi rerum distinctio! Debitis totam earum rem animi quos, assumenda ipsum mollitia iusto nobis exercitationem, possimus.</li>
+	                                                    </ol>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+	                                        
+	                                        <tr class='info'>
+	                                            <th></th>
+	                                            <th>Total</th>
+	                                            <th>62</th>
+	                                            <th>326</th>
+	                                            <th>23%</th>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        
+
+       
+        
+    </body>
+</html>
