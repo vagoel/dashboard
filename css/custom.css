@@ -6,3 +6,10 @@
 #bar-chart{
 	margin-top: 5%;
 }
+
+#draggablePanelList>li{
+	padding: 0;
+	margin:0.5%;
+	height:400px;
+	overflow-y: auto;
+}
