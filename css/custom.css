@@ -13,3 +13,7 @@
 	height:400px;
 	overflow-y: auto;
 }
+
+#draggablePanelList .panel-heading {
+    cursor: move;
+}
